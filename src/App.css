@@ -1,20 +1,118 @@
-h1{
-  color:red;
-  display: block;
-  text-align: center;
-  font-size:70px;
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:cursive;
 }
-.App{
-  text-align: center;
+.cont{
+    width:100%;
+    min-height:100vh;
+    background:var(--i);
+    transition:1s;
 }
-.btn{
-  padding:0.6rem 1rem;
-  font-weight:900;
-  transition-duration:0.5s;
-  border:none;
-  background-color:purple;
-  border-radius:10px;
+.container{
+    max-width:1200px;
+    margin:1rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    gap:10px;
+    justify-content: center;
+    align-items: center;
 }
-.btn:hover{
-  background-color:rgba(128, 0, 128, 0.712);
+.note{
+    width:270px;
+    height:200px;
+    overflow:hidden;
+    background:#ffd082;
+    display:flex;
+    flex-direction: column;
+    user-select: none;
+    justify-content:space-between;
+    margin:0 auto;
+    padding:10px;
+    border-radius:5px;
+    color:#333;
+} 
+.addnote{
+    width:270px;
+    height:200px;
+    background:#df7861;
+    margin:0 auto;
+    padding:10px;
+    border-radius:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+
 }
+
+.note .footer i{
+    transition:0.5s;
+    font-size:20px;
+}
+.note .footer i:hover{
+   color:orangered;
+   cursor: pointer;
+}
+.addnote textarea{
+    width:95%;
+    height:150px;
+    border: none;
+    margin:0 auto;
+    background:#df7861;
+}
+.addnote textarea:focus{
+    outline: none;
+}
+.footer{
+    display: flex;
+    justify-content: space-between !important;
+    align-items: baseline;
+}
+.footer button{
+    background:none;
+    border: none;
+    font-size:20px;
+    font-weight:600;
+    cursor: pointer;
+}
+.header{
+    max-width:1200px;
+    margin:0rem auto;
+    padding:0 2rem;
+    padding-top:1rem;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin:1.5rem auto;
+
+}
+.head button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size:30px;
+    transition:0.5s;
+}
+.inp{
+    width:100%;
+    height:50px;
+    background-color: rgb(206, 195, 195);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-radius:15px;
+    padding:10px;
+}
+.inp input{
+    width:90%;
+    background:rgb(206, 195, 195);
+    font-size:18px;
+    border: none;
+}
+.inp input:focus{
+    outline: none;
+}
+

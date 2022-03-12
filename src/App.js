@@ -1,32 +1,40 @@
-import React, { Component } from 'react';
-import './App.css';
-import Person from './Components/person';
+import { useEffect, useState } from 'react';
+import './App.css'
+import NoteList from './Components/NoteList';
+import simpleContext from './context';
+import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
+import Header from './Components/Header';
+const App = () => {
+  const [noteText,setNoteText]=useState('');
+  const [searchText,setSearchText]=useState('');
+  const [darkMode,setDarkMode]=useState(false);
+  const [notes,setNotes]=useState([])
+  
+  useEffect(()=>{
+    const savedNotes = JSON.parse(localStorage.getItem('react-notes-app-data'));
+    if(savedNotes){
+      setNotes(savedNotes)
+    }
+  },[])
 
-class App extends Component{
-  state={
-    persons:[
-      {firstname:"Armin",lastname:"parnian",age:"22"}
-    ]
-  }
-change = ()=>{
-  this.setState({
-    persons:[
-      {firstname:"Pouya",lastname:"rajabi",age:"21"}
-    ]
-  })
-}
-  render(){
-    return (
-      <div className="App">
-        <h1>Armin Parnian</h1>
-        <hr />
-        <Person firstname={`${this.state.persons[0].firstname}`}
-         lastname={`${this.state.persons[0].lastname}`} 
-         age={`${this.state.persons[0].age}`}/>
-      <button className="btn" onClick={this.change}>change</button>
-      </div>
-    );
-  }
+  useEffect(()=>{
+    localStorage.setItem('react-notes-app-data',JSON.stringify(notes))
+  },[notes])
+
+  return (
+  <simpleContext.Provider 
+  value={{setNotes:setNotes,darkMode:darkMode,
+  notes:notes,setNoteText:setNoteText,
+  noteText:noteText,searchText:searchText,
+  setDarkMode:setDarkMode,setSearchText:setSearchText}}>
+  <div className='cont' style={{'--i':`${darkMode ? '#333':"#ddd"}`}}>
+   <Header/>
+  <NoteList/>
+  </div>
+
+  </simpleContext.Provider>
+ );
 }
 
+ 
 export default App;
