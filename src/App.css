@@ -10,6 +10,10 @@
     min-height:100vh;
     background:var(--i);
     transition:1s;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
 }
 .container{
     max-width:1200px;
@@ -46,7 +50,6 @@
     justify-content:space-between;
 
 }
-
 .note .footer i{
     transition:0.5s;
     font-size:20px;
