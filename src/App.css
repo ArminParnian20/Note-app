@@ -5,16 +5,19 @@
     box-sizing: border-box;
     font-family:'Fredoka', sans-serif;
 }
-.cont{
+.cont,.loader{
     width:100%;
     min-height:100vh;
     background:var(--i);
     transition:1s;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+
+
     padding-bottom:3rem;
+}
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container{
     max-width:1200px;

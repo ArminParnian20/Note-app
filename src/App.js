@@ -4,7 +4,7 @@ import NoteList from './Components/NoteList';
 import simpleContext from './context';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 import Header from './Components/Header';
-import { BarLoader, BeatLoader, BounceLoader } from 'react-spinners';
+import { PacmanLoader } from 'react-spinners';
 
 const App = () => {
   const [noteText,setNoteText]=useState('');
@@ -33,8 +33,15 @@ const App = () => {
   noteText:noteText,searchText:searchText,
   setDarkMode:setDarkMode,setSearchText:setSearchText}}>
   <div className='cont' style={{'--i':`${darkMode ? '#333':"#ddd"}`}}>
-{loadig ? <div>   <Header/>
-  <NoteList/></div>:   <BounceLoader  loading color='red'/>}
+{loadig ? <div> 
+    <Header/>
+  <NoteList/>
+  </div>: 
+  <div className='loader'>
+    <PacmanLoader loading  color='#ffd082'/>
+ 
+  </div>
+    }
 
    
 
