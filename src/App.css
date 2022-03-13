@@ -14,6 +14,7 @@
     flex-direction: column;
     justify-content:center;
     align-items: center;
+    padding-bottom:3rem;
 }
 .container{
     max-width:1200px;
@@ -37,6 +38,7 @@
     padding:10px;
     border-radius:5px;
     color:#333;
+    direction:auto;
 } 
 .addnote{
     width:270px;
@@ -64,6 +66,7 @@
     border: none;
     margin:0 auto;
     background:#df7861;
+direction:auto;
 }
 .addnote textarea:focus{
     outline: none;
